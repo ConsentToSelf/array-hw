@@ -39,26 +39,15 @@ for (let number of numbers) {
 console.log(evenNumbers);
 // ! Задача 5
 
-// let arr5 = [[1, 1, 1]];
-// for (let i of arr5) {
-//   i = arr5.push([1, 1, 1]);
-//   for (i of arr5) {
-//     i = arr5.push([1, 1, 1]);
-//     break;
-//   }
-//   break;
-// }
-// console.log(arr5);
 let arr5 = [];
-for (let i = 0; i <= 1; i++) {
-  arr5.push([1, 1, 1]);
-  for (let key of arr5) {
-    arr5.push(key);
-    break;
+for (let i = 0; i < 3; i++) {
+  let arrayWrapper = [];
+  for (let j = 0; j < 3; j++) {
+    arrayWrapper.push(1);
   }
+  arr5.push(arrayWrapper);
 }
 console.log(arr5);
-
 // ! Задача 6
 
 let arr6 = [1, 1, 1];
@@ -99,8 +88,15 @@ for (let i = 0; i < 6; i++) {
   key = arr10.push(key);
 }
 console.log(arr10);
+let x = 0;
+let sum = 0;
+for (let i = 0; i < arr10.length; i++) {
+  x = x + arr10[i];
+  sum = x / 6;
+}
+console.log(sum);
 
-console.log(arr10.map((i) => ((x += i), (s = x / 6)), (x = 0)).reverse()[0]);
+// console.log(arr10.map((i) => ((x += i), (s = x / 6)), (x = 0)).reverse()[0]);
 
 // ! Задание 11
 
@@ -116,5 +112,9 @@ console.log(arr11.flat(2));
 let arr12 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
 for (let i = 0; i < arr12.length; i++) {
-  console.log(arr12[i + 1] + arr12[i]);
+  arr12[i + 1] + arr12[i];
+  if (arr12[i] > arr12.length) {
+    return;
+  }
 }
+console.log(arr12);
